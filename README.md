@@ -58,22 +58,30 @@ The goal of the EDA was to validate dataset structure, verify imaging completene
 
 Key Steps:
 
-**Dataset Structure Exploration**
+### Dataset Structure Exploration**
 
 - Parsed the folder hierarchy of the dataset (585 patients, ~348,000 DICOM images).
 - Verified that each patient case included all four required MRI modalities: FLAIR, T1w, T1wCE, and T2w.
 
-**Metadata Inspection**
+### Class Distribution Check
+
+Verified that the MGMT_value target variable was relatively balanced across methylated and unmethylated classes.
+
+![Class Distribution of MGMT](/Visualizations/MGMT_Class_Distribution.png)
+
+
+### Metadata Inspection
 
 - Extracted and reviewed DICOM metadata such as ImageOrientationPatient and SeriesInstanceUID to assess image alignment and organization.
 - Grouped image slices by SeriesInstanceUID to determine how each modality was structured per patient.
 
-**Quantitative Summaries**
+![Image Slice Count Per SeriesInstanceUID](/Visualizations/Slice_Count_Per_SeriesID.png)
+
+### Quantitative Summaries
 
 Calculated slice counts per modality and total slices per patient to understand variability in data volume.
 
-**Class Distribution Check**
+![Image Slice Count Per Modality](/Visualizations/Slice_Distribution_Per_Modality.png)
 
-Verified that the MGMT_value target variable was relatively balanced across methylated and unmethylated classes.
 
 
