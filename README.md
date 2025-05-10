@@ -6,6 +6,7 @@ Dataset Description
 The project utilizes the RSNA-MICCAI Brain Tumor Radiogenomic Classification dataset, released as part of a Kaggle competition. The dataset contains multi-modal MRI scans of glioblastoma patients, with a corresponding label indicating the MGMT promoter methylation status — a key biomarker in treatment planning.
 
 **Key Characteristics:**
+
 Number of Patients: 585
 
 Total DICOM Images: ~348,000
@@ -48,12 +49,15 @@ Dataset/
 │
 └── 00002/
     └── ...
+
 Each patient ID (00000, 00001, etc.) maps to a unique case, and each modality folder contains individual .dcm image slices of the brain.
 
 ## Exploratory Data Analysis
+
 The goal of the EDA was to validate dataset structure, verify imaging completeness, and extract critical metadata for downstream modeling.
 
 Key Steps:
+
 **Dataset Structure Exploration**
 
 - Parsed the folder hierarchy of the dataset (585 patients, ~348,000 DICOM images).
@@ -65,8 +69,11 @@ Key Steps:
 - Grouped image slices by SeriesInstanceUID to determine how each modality was structured per patient.
 
 **Quantitative Summaries**
+
 Calculated slice counts per modality and total slices per patient to understand variability in data volume.
 
 **Class Distribution Check**
+
 Verified that the MGMT_value target variable was relatively balanced across methylated and unmethylated classes.
+
 
