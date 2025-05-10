@@ -63,6 +63,8 @@ Key Steps:
 - Parsed the folder hierarchy of the dataset (585 patients, ~348,000 DICOM images).
 - Verified that each patient case included all four required MRI modalities: FLAIR, T1w, T1wCE, and T2w.
 
+![Class Distribution of MGMT](/Visualizations/Slices_from_MRI_modalities_for_each_MGMT_label.png)
+
 ### Class Distribution Check
 
 Verified that the MGMT_value target variable was relatively balanced across methylated and unmethylated classes.
@@ -84,4 +86,24 @@ Calculated slice counts per modality and total slices per patient to understand 
 ![Image Slice Count Per Modality](/Visualizations/Slice_Distribution_Per_Modality.png)
 
 
+## MGMT Classification
 
+Two convolutional neural networks were trained to classify the MGMT promoter methylation status using individual DICOM slices.
+
+**Models:**
+For this classification task, two different models were explored:
+
+DenseNet121: A deep convolutional neural network that is known for its efficiency in handling images with its dense connectivity pattern.
+
+EfficientNetB0: A lightweight model known for its efficient use of resources, achieving high accuracy while maintaining fewer parameters.
+
+Both models were trained and evaluated to predict management values, and the training process was conducted using standard deep learning techniques such as early stopping and regularization.
+
+Preprocessing & Features
+Data was preprocessed by normalizing images to ensure consistency in input.
+
+Various augmentation techniques were employed to enhance the diversity of training samples and help the models generalize better.
+
+## Tools and Technologies
+- Python
+- Pytorch
